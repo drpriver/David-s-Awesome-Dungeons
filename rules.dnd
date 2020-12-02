@@ -127,8 +127,8 @@ Classes::chapter
     * Can use magical one-handed weapons, but not others.
     * Can cast spells in Chain, Robes.
     * One-hand must be unoccupied to cast spells.
-    * 1 spell at first level and +1 spell at every odd level.
-    * +1 dmg at second level and +1 damage at every second level when attacking or for spells requiring an attack roll.
+    * 1 spell at second level and +1 spell at every even level.
+    * +1 dmg at first level and +1 damage at every odd level when attacking or for spells requiring an attack roll.
     * Fighter-Mage spells can be used once every 10 minutes per spell.
 
 
