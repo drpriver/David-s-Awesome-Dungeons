@@ -1,0 +1,284 @@
+David's Awesome Dungeon::title
+
+Level Table::section
+  ::table.level_table
+    ::head
+      Level |    XP | GP cost
+    ::row
+      1     |     0 |     0
+      2     |   500 |   100
+      3     |  1500 |   250
+      4     |  4000 |  1000
+      5     |  8000 |  2000
+      6     | 16000 |  4000
+      7     | 32000 |  8000
+      8     | 64000 | 16000
+
+Experience::text
+  Experience points are rewarded for monsters slain (10xp per hit die)
+  and for treasure retrieved (1xp per gp).  Experience points are
+  evenly divided amongst the party.  If any NPCs accompanied the
+  party, the XP is also divided to them, unless they are complete
+  non-adventuring NPCs (camp-followers etc. who do not actually do any
+  adventuring and just cook meals for example).  Experience points are
+  rewarded upon return to "town".  Leveling up requires gold and as
+  many days as the new level (so to advance from level 1 to 2 takes 2
+  days).
+
+Level up::text
+  On level up, you are presented with a choice of 3 special abilities.
+  Pick one of them.
+
+  The special ability will describe how often it can be used (maybe all
+  the time).
+
+HP::section
+  ::bullets
+    * 7+1d6 at level 1.
+    * +1d6 each level.
+    * You die at 0.
+  ::text
+    Healing can be purchased at 5gp per hp from a clergyman.
+
+    Healing Potions exist, healing 7 hp. Alchemists sell them for 100gp each.
+
+    Healing by resting heals 1hp every other day, starting on the second day.
+
+Attack Bonus::section
+  All characters get +1 attack per level.
+
+Equipment::section
+  ::text
+    A character starts with 3d6*10gp which they can use to buy equipment.
+
+    You can carry 12 slots of stuff.
+
+  Melee Weapons::table
+    ::head
+      Kind | Damage | Price | Slot | Examples
+    ::row
+      One-handed weapon | 1d6 | 15gp | 1 slot |sword, mace, axe, etc.
+      Two-handed weapon | 1d8 | 25gp | 2 slot |greatsword, maul, greataxe, etc.
+      Small Weapon | 1d4 | 5gp | 0.5 slot | dagger, sap, etc.
+      Inferior One-handed weapon | 1d4 | 1gp | 1 slot | club, etc.
+      Inferior Two-handed weapon | 1d6 | 5gp | 2 slot | pitchfork, greatclub, etc.
+  Ranged Weapons::table
+    ::head
+      Kind | Damage | Price | Slot | Examples
+    ::row
+      Bow | 1d6 | 25gp | 2 slot | Shortbow, longbow
+      Crossbow | 1d8 | 30gp | 2 slot | Crossbow
+      Sling | 1d4 | 5gp | 1 slot | Sling
+      Wand | 1d6 | 100gp | 1 slot | Fire, Lightning or Frost
+      Staff | 1d8 | 200gp | 2 slot | Fire, Lightning or Frost
+      Ammo | --- | 5gp | 1 slot | 20 arrows
+  Armor::section
+    ::table
+      ::head
+        Kind | AC Bonus | Price | Slots
+      ::row
+        Shield  | +1 | 20gp   | 1 slot
+        Plate   | +6 | 1000gp | 4 slot
+        Chain   | +4 | 200gp  | 3 slot
+        Leather | +2 | 25gp   | 1 slot
+        Robes   | +1 | 10gp   | 3 slot
+    ::text
+      Magic Users can only cast spells if wearing robes (magic works in strange ways).
+
+      Fighter-Mages can only cast spells if wearing robes or chain.
+
+      Magic Users and Fighter Mages cannot cast spells while using a shield.
+
+      Sneaking requires leather armor or no armor.
+
+      Magic works in strange ways and requires wearing robes.
+  Miscellany::table
+    ::head
+      Thing | Price | Slot
+    ::row
+      Rope, 50'      | 5gp    | 1 slot
+      Potions        | Varies | 1 slot
+      Lantern        | 5gp    | 1 slot
+      Torches (5)    | 1gp    | 1 slot
+      200 gold coins | ---    | 1 slot
+      10-foot pole   | ---    | 3 slots
+      Lockpicks      | 20gp   | 1 slot
+
+
+Classes::chapter
+  Fighter::bullets
+    * +1 hp/level
+    * +1 dmg/level
+    * Cannot use scrolls, wands, staves.
+    * Can use magic weapons.
+  Magic User::bullets
+    * Can use scrolls, wands, staves.
+    * Cannot use magic weapons.
+    * Cannot use shields.
+    * Can cast spells in Robes.
+    * +1 spell/level (choose from one of 3 at random).
+    * Magic User spells can be used once every 10 minutes per spell.
+  Fighter-Mage::bullets
+    * Can use wands, staves but not scrolls.
+    * Can use magical one-handed weapons, but not others.
+    * Can cast spells in Chain, Robes.
+    * One-hand must be unoccupied to cast spells.
+    * 1 spell at first level and +1 spell at every odd level.
+    * +1 dmg at second level and +1 damage at every second level when attacking or for spells requiring an attack roll.
+    * Fighter-Mage spells can be used once every 10 minutes per spell.
+
+
+Ability Scores::chapter
+  ::text
+    Roll 3d6 in order.
+  ::table
+    ::head
+      Ability | Effect
+    ::row
+      Strength     | 15 Strength adds +1 damage to melee and thrown attacks.
+      Dexterity    | 15 Dex adds +1 to the attack roll of ranged and thrown attacks.
+      Agility      | 15 Agility adds +1 AC.
+      Constitution | 15 Constitution adds +0.5 hp/level (rounded up).
+      Wisdom       | 15 Wisdom adds +1 to will saves.
+      Intellect    | 15 Intellect grants a random spell.
+      Charisma     | 15 Charisma adds +1 to the party's reaction rolls (stacks).
+
+Saving Throws::chapter
+  ::text
+    Characters start at +0 in each category.
+
+    On level up they receive 2 saving throw points that they may allocate as they choose.  They may not have more points in a category than their level.
+  ::table
+    ::head
+      Category | Description
+    ::row
+      Fortitude Save  | Save against poisons, noxious fumes, etc.
+      Will Save       | Save against non-physical effects such as charms.
+      Reflex Save     | Save against dragon's breath, fireballs, etc.
+      Perception Save | Save against a trap or illusion. Success indicates you noticed and did not trigger the trap or whatever.
+
+Skills::chapter
+  ::text
+    Roll 1d6-4 in order for each category (minimum of 0).
+  ::bullets
+    * Alchemy
+    * Appraisal
+    * Climbing
+    * Cooking
+    * Decipher Script
+    * Disguise
+    * Escape Artist
+    * Forgery
+    * Herbalism
+    * Jumping
+    * Law
+    * Medicine
+    * Mining
+    * Navigation
+    * Pick Lock
+    * Pick Pocket
+    * Religion
+    * Riding
+    * Sailing
+    * Smithing
+    * Swimming
+    * Tracking
+  ::text
+    On level up, they receive 2 skill points that they may allocate as they choose.
+
+    Skills cap at 5.
+
+    0 points in something usually indicates you cannot do that thing at
+    all (completely untrained), with the exception of things like
+    climbing.
+
+    Skill checks are either gated (you need X in skill to do Y) or are a d6+skill roll against a target number.
+
+Races::chapter
+  ::text
+    Roll your race:
+  ::table
+    ::head
+      d6 | Race
+    ::row
+      1-3 | Human
+      4   | Dwarf
+      5   | Elf
+      6   | Special
+  Special Races::table
+    ::head
+      d6 | Special Race
+    ::row
+      1-2 | Hobbit
+      3   | Half-orc
+      4   | ???
+      5   | ???
+      6   | ???
+
+  Human::bullets
+    * The first time you die, ever, you instead don't. The referee will determine exactly how this happens. In combat, you fall unconscious but survive the battle at half hp. You even survive TPKs.
+  Dwarf::bullets
+    * Cannot cast spells.
+    * Hit dice are d8s instead of d6s.
+    * -2 to ranged attacks.
+  Elf::bullets
+    * +1 spell at first level (must be in robes or chain to cast it).
+    * +1 attack
+    * Hit dice are d4s instead of d6s.
+  Hobbit::bullets
+    * -1 damage with weapons.
+    * +1 attack with slings
+    * Natural 1s are instead natural 20s for you.
+  Half-orc::bullets
+    * +1 damage with melee weapons
+    * -1 attack in bright light
+
+Combat::chapter
+  ::text
+    First, surprise is checked for. If a side is generally unaware of
+    the other, they are 2-in-6 to be surprised.  In a "random"
+    encounter, like the party encounters some monsters while walking
+    down a hallway, both sides are "generally unaware" and thus surprise
+    is checked for both. If both are surprised, then it's like neither
+    are surprised.
+
+    In a surprise round, the unsurprised side gets a free round. After
+    that round combat proceeds as normal.
+
+    If neither is surprised or they are both aware of each other, then
+    proceed to the usual combat procedure.
+
+    Sometimes, one side may be partially aware of the other or
+    completely aware but not expecting an attack.  In that circumstance,
+    their opponent goes first in the first round of combat instead of
+    rolling initiative.  Combat proceeds as normal after the first
+    round.
+
+    On the first round, both sides roll a d20 to determine which side
+    goes first.  If one side rolls a 1, they can only take one action
+    that round.  If one side rolls a 20, they may take an extra action
+    that round.  If both sides roll the same number, both sides reroll.
+
+    After the first round, each side alternates.
+
+  Combat Actions::section
+    ::text
+      Each round, a character can take two actions. However, they can only
+      take one attack-type action each round.  An attack-type action is
+      defined as an attack, casting a spell, or activating a magic item
+      that is attack-like, or any action that describes itself as
+      attack-type.
+    ::bullets
+      * Move: A character can move 30ish feet. Moving out of an enemy's reach provokes an opportunity attack. If it hits you, your move ends. (You can take this action multiple times in one round). Unlike other games, you can't split your movement.
+      * Melee Attack: A character makes an attack.
+      * Ranged Attack: Make a ranged attack. This provokes from anyone within your reach. If they hit you, your attack is spoiled.
+      * Cast a spell: A character casts a spell. Some spells require multiple actions. If a spell requires more than one action, you can cast it across turns, but if you take damage the spell is ruined. Casting a spell provokes an opportunity attack (certain spells specify they don't). If the attack hits, your spell is spoiled.
+      * Bull Rush: Make an opposed attack roll against an enemy (referee may grant circumstance bonuses based on size, etc.). If you win, you and the enemy move up to 15' in the direction of the enemy from you, with neither of you provoking opportunity attacks. This is not attack-like.
+      * Disengage: This round, you do not provoke opportunity attacks from moving, but you cannot move into the reach of enemies.
+      * Defend: Attack-like. You get +2 AC this round.
+      * Drink a potion: You retrieve a potion from your pack and drink it. This provokes an opportunity attack. If the attack hits, the potion falls to the ground and shatters.
+      * Other: Referee adjudicates.
+
+  Miscellany::section
+    ::text
+      Prebuffing is banned. There's no justification, it just makes the game less fun.

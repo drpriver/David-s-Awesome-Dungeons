@@ -1,0 +1,473 @@
+*{
+    box-sizing:border-box;
+}
+*::-webkit-scrollbar {
+    display:none;
+}
+a, img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: rgb(228,223,204);
+}
+div.grid_container{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 5% 95%;
+    height:100%;
+    width:100%;
+    }
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+h1 {
+    font-size:2em;
+    margin-top: 0;
+}
+
+h2 {
+    font-size:1.5em;
+}
+
+h3 {
+    font-size:1.17em;
+    color: #58180D;
+}
+
+h4 {
+    font-size:1em;
+    color: #58180D;
+
+}
+
+h5 {
+    font-size:.83em;
+    color: #58180D;
+}
+
+h6 {
+    font-size:.67em;
+    color: #58180D;
+}
+
+h3,h4,h5 {
+color: rgb(88,24,13);
+}
+h1, h2, h3 {
+    border-bottom: 1px solid #aaaaaa;
+    max-width: 800px;
+}
+
+
+nav {
+    font-size: .7em;
+    padding-bottom: 50%;
+    /*overflow-y:scroll;*/
+}
+
+img {
+    width:100%;
+}
+
+.left a {
+    font-size: 14px;
+    display: block;
+    border-bottom: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px grey dotted;
+}
+.left {
+    grid-column: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    height:100%;
+    overflow-y:scroll;
+}
+.center {
+    padding: 0 10px;
+    padding-left: 4em;
+    max-width: 80%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start:1;
+    grid-row-end:3;
+    overflow-y: scroll;
+    padding-bottom: 20em;
+}
+span.button {
+    background: lightblue;
+    color: black;
+    padding: 1em 1em 1em 1em;
+    margin: 2em 1em;
+    display: block;
+    text-align: center;
+}
+span.button:hover {
+    cursor: pointer;
+}
+div.buttonContainer {
+    display: flex;
+    position: absolute;
+    left: .5em;
+    top: .5em;
+}
+
+.top {
+    margin:auto;
+    grid-column: 1;
+    grid-row: 1;
+    flex-direction: row;
+    justify-content: left;
+    align-content: center;
+    display:flex;
+}
+.top a {
+    background-color:lightgrey;
+    padding: 10px;
+    cursor:pointer;
+    border:none;
+}
+.top a:hover {
+    background-color: darkgrey;
+}
+.center p, .center ol, .center ul {
+    max-width: 50em;
+}
+table {
+    border-collapse: collapse;
+    margin: 2rem;
+    margin-top: 0;
+    text-align: left;
+    }
+th, td {
+    padding: .2em 1em;
+    border: 1px solid black;
+    text-align: left;
+    }
+table {
+    max-width: 90%;
+}
+table.text_table {
+    text-align: left;
+}
+table.text_table .even {
+    background-color: initial;
+}
+table ul {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+table.puny {
+    max-width: 10em;
+}
+table.tiny {
+    max-width: 20em;
+}
+table.small {
+    max-width: 30em;
+}
+table.medium {
+    max-width: 40em;
+}
+table.large {
+    max-width: 50em;
+}
+table.class_table {
+    max-width: 90%;
+}
+section.condition,
+section.feat {
+    border: 1px solid grey;
+    padding: 12px;
+    margin-bottom: .5em;
+    margin-left: 6px;
+    margin-right:6px;
+    width:50em;
+    max-width:34em;
+    background-color: rgb(248,243,224);
+}
+
+section.spell{
+    border-top: 1px solid black;
+    padding-top: 1em;
+}
+section.spell td:first-child{
+    text-align: right;
+}
+section.spell thead {
+    display: none;
+}
+section.spell td{
+    border: none;
+}
+section.spell h1,
+section.spell h2,
+section.spell h3,
+section.spell h4,
+section.spell h5,
+section.spell h6{
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+}
+section.feat h4,
+section.feat h3 {
+    margin-block-start:0px;
+}
+section h3,
+section h4,
+section h5,
+section h6{
+    margin-bottom:2px;
+}
+section h3+p,
+section h4+p,
+section h5+p,
+section h6+p {
+    margin-top:0;
+}
+section h3+div>p,
+section h4+div>p,
+section h5+div>p,
+section h6+div>p {
+    margin-top:0;
+}
+
+section.skill_description {
+    border-top: 1px solid black;
+    padding-top: 1em;
+}
+section.character_class section.skill_description h5{
+    font-size:1.17em;
+    color: #58180D;
+}
+
+section.character_class section.skill_description h6{
+    font-size:.67em;
+    color: #58180D;
+}
+section.chapter+hr{
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left:0;
+    max-width:800px;
+}
+
+section.chapter+hr:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+}
+table.spell_list *{
+    border: none;
+    /*border-bottom: 1px solid black;*/
+}
+table.spell_list .even {
+    background-color: rgb(205,200,184);
+}
+table.spell_list thead {
+    display:none;
+}
+div.maneuver{
+    border: 1px solid grey;
+    padding: 12px;
+    margin-bottom: .5em;
+    margin-left: 6px;
+    margin-right: 6px;
+    background-color: rgb(255, 243, 224);
+}
+div.maneuver_title{
+    font-weight: bold;
+    margin-bottom:.3em;
+}
+
+table.equipment .odd {
+    background-color: rgb(205,200,184);
+}
+
+table.equipment tr td:nth-child(1) {
+    width: 12em;
+}
+table.equipment tr td:nth-child(2) {
+    width: 5em;
+    text-align: right;
+}
+table.equipment tr td:nth-child(3) {
+    width: 4em;
+    text-align:center;
+}
+table.equipment tr td:nth-child(4) {
+    width: 6em;
+    text-align:center;
+}
+table.equipment tr td:nth-child(5) {
+    width: 4em;
+    text-align:center;
+}
+table.equipment tr td:nth-child(6) {
+    width: auto;
+    text-align:center;
+}
+table.equipment tr td:nth-child(7) {
+    width: auto;
+    text-align:center;
+}
+table.equipment tr td:nth-child(8) {
+    width: auto;
+    text-align:center;
+}
+table.weapon_stats thead{
+    display:none
+}
+
+table.weapon_stats, table.weapon_stats *{
+    border:none;
+}
+table.weapon_stats .even {
+    background-color: rgb(205,200,184);
+}
+table.weapon_stats tr td:nth-child(1){
+    text-align:right;
+}
+
+.feat h4 {
+    color: black;
+}
+.spell {
+    background-color: rgb(255, 243, 224);
+    padding: 16px;
+    border: 1px solid grey;
+    max-width:50em;
+}
+
+.feat .spell h5 {
+    margin-top: 0;
+}
+
+table.stat_block .even {
+    background-color: rgb(205,200,184);
+}
+
+table.stat_block > tbody > tr td:nth-child(2){
+    border-left: 1px solid black;
+}
+table.spell_info > tbody > tr.even {
+    background-color: rgb(205,200,184);
+}
+table.spell_info > tbody > tr td:nth-child(2){
+    border-left: 1px solid black;
+}
+
+table > tbody > tr td:nth-child(1),
+table.spell_info > tbody > tr td:nth-child(1){
+    white-space:nowrap;
+}
+
+nav li > ul {
+    display: none;
+}
+
+li > ul.expanded {
+    display: block;
+}
+table.equipment > tbody > tr td:nth-child(1){
+    white-space:nowrap;
+}
+table.equipment > thead > tr th {
+    white-space:nowrap;
+}
+
+section.the_spells>section {
+    margin-bottom: 1em;
+}
+
+section.domain, div.weapon {
+    background-color: rgb(255, 243, 224);
+    padding: 16px;
+    border: 1px solid grey;
+    max-width:30em;
+    margin-bottom: 1em;
+}
+section.domain {
+    max-width: 45em;
+}
+
+div.weapon > h4,
+section.domain > h5 {
+    margin-top: 0;
+    color: black;
+    border-bottom: 1px solid grey;
+    width: auto;
+}
+table.level_table .odd {
+    background-color: rgb(205,200,184);
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 720px) {
+    .center {
+        max-width: 100%;
+        padding-left:16px;
+        margin:0;
+    }
+    nav li ul {
+        display: none;
+    }
+    .left, .top {
+        display:none;
+    }
+div.grid_container{
+    display: block;
+    height:100%;
+    width:100%;
+    }
+table{
+    overflow-x: scroll;
+    margin:16px;
+}
+table.equipment {
+    max-width:100vw;
+}
+th, td {
+    padding: 4px 4px;
+    border: 1px solid black;
+    text-align: left;
+}
+table.equipment > tbody > tr td:nth-child(1){
+    white-space:wrap;
+}
+table.equipment > thead > tr th{
+    white-space:wrap;
+}
+
+}

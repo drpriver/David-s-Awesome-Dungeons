@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rules</title>
+    <style>
+      *{
+          box-sizing:border-box;
+      }
+      *::-webkit-scrollbar {
+          display:none;
+      }
+      a, img {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+      }
+      html, body {
+          height: 100%;
+          margin: 0;
+          font-family: Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+          background-color: rgb(228,223,204);
+      }
+      div.grid_container{
+          display: grid;
+          grid-template-columns: 20% 80%;
+          grid-template-rows: 5% 95%;
+          height:100%;
+          width:100%;
+          }
+      
+      h1,h2,h3,h4,h5,h6 {
+          font-family: Tahoma, Geneva, Verdana, sans-serif;
+      
+      }
+      
+      h1 {
+          font-size:2em;
+          margin-top: 0;
+      }
+      
+      h2 {
+          font-size:1.5em;
+      }
+      
+      h3 {
+          font-size:1.17em;
+          color: #58180D;
+      }
+      
+      h4 {
+          font-size:1em;
+          color: #58180D;
+      
+      }
+      
+      h5 {
+          font-size:.83em;
+          color: #58180D;
+      }
+      
+      h6 {
+          font-size:.67em;
+          color: #58180D;
+      }
+      
+      h3,h4,h5 {
+      color: rgb(88,24,13);
+      }
+      h1, h2, h3 {
+          border-bottom: 1px solid #aaaaaa;
+          max-width: 800px;
+      }
+      
+      
+      nav {
+          font-size: .7em;
+          padding-bottom: 50%;
+          /*overflow-y:scroll;*/
+      }
+      
+      img {
+          width:100%;
+      }
+      
+      .left a {
+          font-size: 14px;
+          display: block;
+          border-bottom: none;
+      }
+      a {
+          text-decoration: none;
+          color: black;
+          border-bottom: 1px grey dotted;
+      }
+      .left {
+          grid-column: 1;
+          grid-row-start: 2;
+          grid-row-end: 3;
+          height:100%;
+          overflow-y:scroll;
+      }
+      .center {
+          padding: 0 10px;
+          padding-left: 4em;
+          max-width: 80%;
+          grid-column-start: 2;
+          grid-column-end: 3;
+          grid-row-start:1;
+          grid-row-end:3;
+          overflow-y: scroll;
+          padding-bottom: 20em;
+      }
+      span.button {
+          background: lightblue;
+          color: black;
+          padding: 1em 1em 1em 1em;
+          margin: 2em 1em;
+          display: block;
+          text-align: center;
+      }
+      span.button:hover {
+          cursor: pointer;
+      }
+      div.buttonContainer {
+          display: flex;
+          position: absolute;
+          left: .5em;
+          top: .5em;
+      }
+      
+      .top {
+          margin:auto;
+          grid-column: 1;
+          grid-row: 1;
+          flex-direction: row;
+          justify-content: left;
+          align-content: center;
+          display:flex;
+      }
+      .top a {
+          background-color:lightgrey;
+          padding: 10px;
+          cursor:pointer;
+          border:none;
+      }
+      .top a:hover {
+          background-color: darkgrey;
+      }
+      .center p, .center ol, .center ul {
+          max-width: 50em;
+      }
+      table {
+          border-collapse: collapse;
+          margin: 2rem;
+          margin-top: 0;
+          text-align: left;
+          }
+      th, td {
+          padding: .2em 1em;
+          border: 1px solid black;
+          text-align: left;
+          }
+      table {
+          max-width: 90%;
+      }
+      table.text_table {
+          text-align: left;
+      }
+      table.text_table .even {
+          background-color: initial;
+      }
+      table ul {
+          -webkit-margin-before: 0;
+          -webkit-margin-after: 0;
+      }
+      table.puny {
+          max-width: 10em;
+      }
+      table.tiny {
+          max-width: 20em;
+      }
+      table.small {
+          max-width: 30em;
+      }
+      table.medium {
+          max-width: 40em;
+      }
+      table.large {
+          max-width: 50em;
+      }
+      table.class_table {
+          max-width: 90%;
+      }
+      section.condition,
+      section.feat {
+          border: 1px solid grey;
+          padding: 12px;
+          margin-bottom: .5em;
+          margin-left: 6px;
+          margin-right:6px;
+          width:50em;
+          max-width:34em;
+          background-color: rgb(248,243,224);
+      }
+      
+      section.spell{
+          border-top: 1px solid black;
+          padding-top: 1em;
+      }
+      section.spell td:first-child{
+          text-align: right;
+      }
+      section.spell thead {
+          display: none;
+      }
+      section.spell td{
+          border: none;
+      }
+      section.spell h1,
+      section.spell h2,
+      section.spell h3,
+      section.spell h4,
+      section.spell h5,
+      section.spell h6{
+          font-weight: bold;
+          color: black;
+          font-size: 16px;
+      }
+      section.feat h4,
+      section.feat h3 {
+          margin-block-start:0px;
+      }
+      section h3,
+      section h4,
+      section h5,
+      section h6{
+          margin-bottom:2px;
+      }
+      section h3+p,
+      section h4+p,
+      section h5+p,
+      section h6+p {
+          margin-top:0;
+      }
+      section h3+div>p,
+      section h4+div>p,
+      section h5+div>p,
+      section h6+div>p {
+          margin-top:0;
+      }
+      
+      section.skill_description {
+          border-top: 1px solid black;
+          padding-top: 1em;
+      }
+      section.character_class section.skill_description h5{
+          font-size:1.17em;
+          color: #58180D;
+      }
+      
+      section.character_class section.skill_description h6{
+          font-size:.67em;
+          color: #58180D;
+      }
+      section.chapter+hr{
+          overflow: visible; /* For IE */
+          padding: 0;
+          border: none;
+          border-top: medium double #333;
+          color: #333;
+          text-align: center;
+          margin-top: 1em;
+          margin-bottom: 1em;
+          margin-left:0;
+          max-width:800px;
+      }
+      
+      section.chapter+hr:after {
+          content: "§";
+          display: inline-block;
+          position: relative;
+          top: -0.7em;
+          font-size: 1.5em;
+          padding: 0 0.25em;
+      }
+      table.spell_list *{
+          border: none;
+          /*border-bottom: 1px solid black;*/
+      }
+      table.spell_list .even {
+          background-color: rgb(205,200,184);
+      }
+      table.spell_list thead {
+          display:none;
+      }
+      div.maneuver{
+          border: 1px solid grey;
+          padding: 12px;
+          margin-bottom: .5em;
+          margin-left: 6px;
+          margin-right: 6px;
+          background-color: rgb(255, 243, 224);
+      }
+      div.maneuver_title{
+          font-weight: bold;
+          margin-bottom:.3em;
+      }
+      
+      table.equipment .odd {
+          background-color: rgb(205,200,184);
+      }
+      
+      table.equipment tr td:nth-child(1) {
+          width: 12em;
+      }
+      table.equipment tr td:nth-child(2) {
+          width: 5em;
+          text-align: right;
+      }
+      table.equipment tr td:nth-child(3) {
+          width: 4em;
+          text-align:center;
+      }
+      table.equipment tr td:nth-child(4) {
+          width: 6em;
+          text-align:center;
+      }
+      table.equipment tr td:nth-child(5) {
+          width: 4em;
+          text-align:center;
+      }
+      table.equipment tr td:nth-child(6) {
+          width: auto;
+          text-align:center;
+      }
+      table.equipment tr td:nth-child(7) {
+          width: auto;
+          text-align:center;
+      }
+      table.equipment tr td:nth-child(8) {
+          width: auto;
+          text-align:center;
+      }
+      table.weapon_stats thead{
+          display:none
+      }
+      
+      table.weapon_stats, table.weapon_stats *{
+          border:none;
+      }
+      table.weapon_stats .even {
+          background-color: rgb(205,200,184);
+      }
+      table.weapon_stats tr td:nth-child(1){
+          text-align:right;
+      }
+      
+      .feat h4 {
+          color: black;
+      }
+      .spell {
+          background-color: rgb(255, 243, 224);
+          padding: 16px;
+          border: 1px solid grey;
+          max-width:50em;
+      }
+      
+      .feat .spell h5 {
+          margin-top: 0;
+      }
+      
+      table.stat_block .even {
+          background-color: rgb(205,200,184);
+      }
+      
+      table.stat_block > tbody > tr td:nth-child(2){
+          border-left: 1px solid black;
+      }
+      table.spell_info > tbody > tr.even {
+          background-color: rgb(205,200,184);
+      }
+      table.spell_info > tbody > tr td:nth-child(2){
+          border-left: 1px solid black;
+      }
+      
+      table > tbody > tr td:nth-child(1),
+      table.spell_info > tbody > tr td:nth-child(1){
+          white-space:nowrap;
+      }
+      
+      nav li > ul {
+          display: none;
+      }
+      
+      li > ul.expanded {
+          display: block;
+      }
+      table.equipment > tbody > tr td:nth-child(1){
+          white-space:nowrap;
+      }
+      table.equipment > thead > tr th {
+          white-space:nowrap;
+      }
+      
+      section.the_spells>section {
+          margin-bottom: 1em;
+      }
+      
+      section.domain, div.weapon {
+          background-color: rgb(255, 243, 224);
+          padding: 16px;
+          border: 1px solid grey;
+          max-width:30em;
+          margin-bottom: 1em;
+      }
+      section.domain {
+          max-width: 45em;
+      }
+      
+      div.weapon > h4,
+      section.domain > h5 {
+          margin-top: 0;
+          color: black;
+          border-bottom: 1px solid grey;
+          width: auto;
+      }
+      table.level_table .odd {
+          background-color: rgb(205,200,184);
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      @media only screen and (max-width: 720px) {
+          .center {
+              max-width: 100%;
+              padding-left:16px;
+              margin:0;
+          }
+          nav li ul {
+              display: none;
+          }
+          .left, .top {
+              display:none;
+          }
+      div.grid_container{
+          display: block;
+          height:100%;
+          width:100%;
+          }
+      table{
+          overflow-x: scroll;
+          margin:16px;
+      }
+      table.equipment {
+          max-width:100vw;
+      }
+      th, td {
+          padding: 4px 4px;
+          border: 1px solid black;
+          text-align: left;
+      }
+      table.equipment > tbody > tr td:nth-child(1){
+          white-space:wrap;
+      }
+      table.equipment > thead > tr th{
+          white-space:wrap;
+      }
+      
+      }
+    </style>
+    <script>
+      "use strict"
+      function onload(){
+          {
+          const chapters = document.getElementsByClassName("chapter");
+          for(let i = 0; i < chapters.length; i++){
+              const chapter = chapters[i];
+              const el = document.createElement("hr");
+              chapter.parentNode.insertBefore(el, chapter.nextSibling);
+          }
+          }
+          const hidden_ul = document.querySelectorAll("nav li");
+          for(let i = 0; i < hidden_ul.length; i++){
+              hidden_ul[i].addEventListener("click", function(e){
+                  const el = e.target.parentNode.getElementsByTagName("ul")
+                  if(!el.length)
+                      return;
+                  el[0].classList.toggle("expanded");
+              });
+          }
+      }
+      document.addEventListener("DOMContentLoaded", onload)
+      
+    </script>
+    <script>
+      data_blob={}
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  </head>
+  <body>
+    <div class="grid_container">
+      <div class="top">
+      </div>
+      <div class="left">
+        <nav id="TOC">
+          <ul>
+            <li><a href="#level-table">Level Table</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#level-up">Level up</a></li>
+            <li><a href="#hp">HP</a></li>
+            <li><a href="#attack-bonus">Attack Bonus</a></li>
+            <li><a href="#equipment">Equipment</a><ul>
+              <li><a href="#melee-weapons">Melee Weapons</a></li>
+              <li><a href="#ranged-weapons">Ranged Weapons</a></li>
+              <li><a href="#armor">Armor</a></li>
+              <li><a href="#miscellany">Miscellany</a></li>
+            </ul></li>
+            <li><a href="#classes">Classes</a><ul>
+              <li><a href="#fighter">Fighter</a></li>
+              <li><a href="#magic-user">Magic User</a></li>
+              <li><a href="#fighter-mage">Fighter-Mage</a></li>
+            </ul></li>
+            <li><a href="#ability-scores">Ability Scores</a></li>
+            <li><a href="#saving-throws">Saving Throws</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#races">Races</a><ul>
+              <li><a href="#special-races">Special Races</a></li>
+              <li><a href="#human">Human</a></li>
+              <li><a href="#dwarf">Dwarf</a></li>
+              <li><a href="#elf">Elf</a></li>
+              <li><a href="#hobbit">Hobbit</a></li>
+              <li><a href="#half-orc">Half-orc</a></li>
+            </ul></li>
+            <li><a href="#combat">Combat</a><ul>
+              <li><a href="#combat-actions">Combat Actions</a></li>
+              <li><a href="#miscellany1">Miscellany</a></li>
+            </ul></li>
+          </ul>
+          <hr>
+        </nav>
+      </div>
+      <div class="center">
+        
+        <h1 id="davids-awesome-dungeon">David's Awesome Dungeon</h1>
+        <section>
+          <h2 id="level-table">Level Table</h2>
+          <section>
+            
+            <table class="level_table">
+              <thead>
+                <tr class="table_header">
+                  <th>Level </th>
+                  <th>    XP </th>
+                  <th> GP cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td>1     </td>
+                  <td>     0 </td>
+                  <td>     0</td>
+                </tr>
+                <tr class="even">
+                  <td>2     </td>
+                  <td>   500 </td>
+                  <td>   100</td>
+                </tr>
+                <tr class="odd">
+                  <td>3     </td>
+                  <td>  1500 </td>
+                  <td>   250</td>
+                </tr>
+                <tr class="even">
+                  <td>4     </td>
+                  <td>  4000 </td>
+                  <td>  1000</td>
+                </tr>
+                <tr class="odd">
+                  <td>5     </td>
+                  <td>  8000 </td>
+                  <td>  2000</td>
+                </tr>
+                <tr class="even">
+                  <td>6     </td>
+                  <td> 16000 </td>
+                  <td>  4000</td>
+                </tr>
+                <tr class="odd">
+                  <td>7     </td>
+                  <td> 32000 </td>
+                  <td>  8000</td>
+                </tr>
+                <tr class="even">
+                  <td>8     </td>
+                  <td> 64000 </td>
+                  <td> 16000</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+        <div>
+          <h2 id="experience">Experience</h2>
+          <p>
+            Experience points are rewarded for monsters slain (10xp per hit die)
+            and for treasure retrieved (1xp per gp).  Experience points are
+            evenly divided amongst the party.  If any NPCs accompanied the
+            party, the XP is also divided to them, unless they are complete
+            non-adventuring NPCs (camp-followers etc. who do not actually do any
+            adventuring and just cook meals for example).  Experience points are
+            rewarded upon return to "town".  Leveling up requires gold and as
+            many days as the new level (so to advance from level 1 to 2 takes 2
+            days).
+          </p>
+        </div>
+        <div>
+          <h2 id="level-up">Level up</h2>
+          <p>
+            On level up, you are presented with a choice of 3 special abilities.
+            Pick one of them.
+          </p>
+          <p>
+            The special ability will describe how often it can be used (maybe all
+            the time).
+          </p>
+        </div>
+        <section>
+          <h2 id="hp">HP</h2>
+          <div>
+            
+            <ul>
+              <li> 7+1d6 at level 1.</li>
+              <li> +1d6 each level.</li>
+              <li> You die at 0.</li>
+            </ul>
+          </div>
+          <div>
+            
+            <p>
+              Healing can be purchased at 5gp per hp from a clergyman.
+            </p>
+            <p>
+              Healing Potions exist, healing 7 hp. Alchemists sell them for 100gp each.
+            </p>
+            <p>
+              Healing by resting heals 1hp every other day, starting on the second day.
+            </p>
+          </div>
+        </section>
+        <section>
+          <h2 id="attack-bonus">Attack Bonus</h2>
+          All characters get +1 attack per level.
+        </section>
+        <section>
+          <h2 id="equipment">Equipment</h2>
+          <div>
+            
+            <p>
+              A character starts with 3d6*10gp which they can use to buy equipment.
+            </p>
+            <p>
+              You can carry 12 slots of stuff.
+            </p>
+          </div>
+          <section>
+            <h3 id="melee-weapons">Melee Weapons</h3>
+            <table>
+              <thead>
+                <tr class="table_header">
+                  <th>Kind </th>
+                  <th> Damage </th>
+                  <th> Price </th>
+                  <th> Slot </th>
+                  <th> Examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td>One-handed weapon </td>
+                  <td> 1d6 </td>
+                  <td> 15gp </td>
+                  <td> 1 slot </td>
+                  <td>sword, mace, axe, etc.</td>
+                </tr>
+                <tr class="even">
+                  <td>Two-handed weapon </td>
+                  <td> 1d8 </td>
+                  <td> 25gp </td>
+                  <td> 2 slot </td>
+                  <td>greatsword, maul, greataxe, etc.</td>
+                </tr>
+                <tr class="odd">
+                  <td>Small Weapon </td>
+                  <td> 1d4 </td>
+                  <td> 5gp </td>
+                  <td> 0.5 slot </td>
+                  <td> dagger, sap, etc.</td>
+                </tr>
+                <tr class="even">
+                  <td>Inferior One-handed weapon </td>
+                  <td> 1d4 </td>
+                  <td> 1gp </td>
+                  <td> 1 slot </td>
+                  <td> club, etc.</td>
+                </tr>
+                <tr class="odd">
+                  <td>Inferior Two-handed weapon </td>
+                  <td> 1d6 </td>
+                  <td> 5gp </td>
+                  <td> 2 slot </td>
+                  <td> pitchfork, greatclub, etc.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h3 id="ranged-weapons">Ranged Weapons</h3>
+            <table>
+              <thead>
+                <tr class="table_header">
+                  <th>Kind </th>
+                  <th> Damage </th>
+                  <th> Price </th>
+                  <th> Slot </th>
+                  <th> Examples</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td>Bow </td>
+                  <td> 1d6 </td>
+                  <td> 25gp </td>
+                  <td> 2 slot </td>
+                  <td> Shortbow, longbow</td>
+                </tr>
+                <tr class="even">
+                  <td>Crossbow </td>
+                  <td> 1d8 </td>
+                  <td> 30gp </td>
+                  <td> 2 slot </td>
+                  <td> Crossbow</td>
+                </tr>
+                <tr class="odd">
+                  <td>Sling </td>
+                  <td> 1d4 </td>
+                  <td> 5gp </td>
+                  <td> 1 slot </td>
+                  <td> Sling</td>
+                </tr>
+                <tr class="even">
+                  <td>Wand </td>
+                  <td> 1d6 </td>
+                  <td> 100gp </td>
+                  <td> 1 slot </td>
+                  <td> Fire, Lightning or Frost</td>
+                </tr>
+                <tr class="odd">
+                  <td>Staff </td>
+                  <td> 1d8 </td>
+                  <td> 200gp </td>
+                  <td> 2 slot </td>
+                  <td> Fire, Lightning or Frost</td>
+                </tr>
+                <tr class="even">
+                  <td>Ammo </td>
+                  <td> --- </td>
+                  <td> 5gp </td>
+                  <td> 1 slot </td>
+                  <td> 20 arrows</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h3 id="armor">Armor</h3>
+            <section>
+              
+              <table>
+                <thead>
+                  <tr class="table_header">
+                    <th>Kind </th>
+                    <th> AC Bonus </th>
+                    <th> Price </th>
+                    <th> Slots</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="odd">
+                    <td>Shield  </td>
+                    <td> +1 </td>
+                    <td> 20gp   </td>
+                    <td> 1 slot</td>
+                  </tr>
+                  <tr class="even">
+                    <td>Plate   </td>
+                    <td> +6 </td>
+                    <td> 1000gp </td>
+                    <td> 4 slot</td>
+                  </tr>
+                  <tr class="odd">
+                    <td>Chain   </td>
+                    <td> +4 </td>
+                    <td> 200gp  </td>
+                    <td> 3 slot</td>
+                  </tr>
+                  <tr class="even">
+                    <td>Leather </td>
+                    <td> +2 </td>
+                    <td> 25gp   </td>
+                    <td> 1 slot</td>
+                  </tr>
+                  <tr class="odd">
+                    <td>Robes   </td>
+                    <td> +1 </td>
+                    <td> 10gp   </td>
+                    <td> 3 slot</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <div>
+              
+              <p>
+                Magic Users can only cast spells if wearing robes (magic works in strange ways).
+              </p>
+              <p>
+                Fighter-Mages can only cast spells if wearing robes or chain.
+              </p>
+              <p>
+                Magic Users and Fighter Mages cannot cast spells while using a shield.
+              </p>
+              <p>
+                Sneaking requires leather armor or no armor.
+              </p>
+              <p>
+                Magic works in strange ways and requires wearing robes.
+              </p>
+            </div>
+          </section>
+          <section>
+            <h3 id="miscellany">Miscellany</h3>
+            <table>
+              <thead>
+                <tr class="table_header">
+                  <th>Thing </th>
+                  <th> Price </th>
+                  <th> Slot</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td>Rope, 50'      </td>
+                  <td> 5gp    </td>
+                  <td> 1 slot</td>
+                </tr>
+                <tr class="even">
+                  <td>Potions        </td>
+                  <td> Varies </td>
+                  <td> 1 slot</td>
+                </tr>
+                <tr class="odd">
+                  <td>Lantern        </td>
+                  <td> 5gp    </td>
+                  <td> 1 slot</td>
+                </tr>
+                <tr class="even">
+                  <td>Torches (5)    </td>
+                  <td> 1gp    </td>
+                  <td> 1 slot</td>
+                </tr>
+                <tr class="odd">
+                  <td>200 gold coins </td>
+                  <td> ---    </td>
+                  <td> 1 slot</td>
+                </tr>
+                <tr class="even">
+                  <td>10-foot pole   </td>
+                  <td> ---    </td>
+                  <td> 3 slots</td>
+                </tr>
+                <tr class="odd">
+                  <td>Lockpicks      </td>
+                  <td> 20gp   </td>
+                  <td> 1 slot</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+        <section class="chapter">
+          <h2 id="classes">Classes</h2>
+          <div>
+            <h3 id="fighter">Fighter</h3>
+            <ul>
+              <li> +1 hp/level</li>
+              <li> +1 dmg/level</li>
+              <li> Cannot use scrolls, wands, staves.</li>
+              <li> Can use magic weapons.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 id="magic-user">Magic User</h3>
+            <ul>
+              <li> Can use scrolls, wands, staves.</li>
+              <li> Cannot use magic weapons.</li>
+              <li> Cannot use shields.</li>
+              <li> Can cast spells in Robes.</li>
+              <li> +1 spell/level (choose from one of 3 at random).</li>
+              <li> Magic User spells can be used once every 10 minutes per spell.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 id="fighter-mage">Fighter-Mage</h3>
+            <ul>
+              <li> Can use wands, staves but not scrolls.</li>
+              <li> Can use magical one-handed weapons, but not others.</li>
+              <li> Can cast spells in Chain, Robes.</li>
+              <li> One-hand must be unoccupied to cast spells.</li>
+              <li> 1 spell at first level and +1 spell at every odd level.</li>
+              <li> +1 dmg at second level and +1 damage at every second level when attacking or for spells requiring an attack roll.</li>
+              <li> Fighter-Mage spells can be used once every 10 minutes per spell.</li>
+            </ul>
+          </div>
+        </section>
+        <section class="chapter">
+          <h2 id="ability-scores">Ability Scores</h2>
+          <div>
+            
+            <p>
+              Roll 3d6 in order.
+            </p>
+          </div>
+          <section>
+            
+            <table>
+              <thead>
+                <tr class="table_header">
+                  <th>Ability </th>
+                  <th> Effect</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td>Strength     </td>
+                  <td> 15 Strength adds +1 damage to melee and thrown attacks.</td>
+                </tr>
+                <tr class="even">
+                  <td>Dexterity    </td>
+                  <td> 15 Dex adds +1 to the attack roll of ranged and thrown attacks.</td>
+                </tr>
+                <tr class="odd">
+                  <td>Agility      </td>
+                  <td> 15 Agility adds +1 AC.</td>
+                </tr>
+                <tr class="even">
+                  <td>Constitution </td>
+                  <td> 15 Constitution adds +0.5 hp/level (rounded up).</td>
+                </tr>
+                <tr class="odd">
+                  <td>Wisdom       </td>
+                  <td> 15 Wisdom adds +1 to will saves.</td>
+                </tr>
+                <tr class="even">
+                  <td>Intellect    </td>
+                  <td> 15 Intellect grants a random spell.</td>
+                </tr>
+                <tr class="odd">
+                  <td>Charisma     </td>
+                  <td> 15 Charisma adds +1 to the party's reaction rolls (stacks).</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+        <section class="chapter">
+          <h2 id="saving-throws">Saving Throws</h2>
+          <div>
+            
+            <p>
+              Characters start at +0 in each category.
+            </p>
+            <p>
+              On level up they receive 2 saving throw points that they may allocate as they choose.  They may not have more points in a category than their level.
+            </p>
+          </div>
+          <section>
+            
+            <table>
+              <thead>
+                <tr class="table_header">
+                  <th>Category </th>
+                  <th> Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td>Fortitude Save  </td>
+                  <td> Save against poisons, noxious fumes, etc.</td>
+                </tr>
+                <tr class="even">
+                  <td>Will Save       </td>
+                  <td> Save against non-physical effects such as charms.</td>
+                </tr>
+                <tr class="odd">
+                  <td>Reflex Save     </td>
+                  <td> Save against dragon's breath, fireballs, etc.</td>
+                </tr>
+                <tr class="even">
+                  <td>Perception Save </td>
+                  <td> Save against a trap or illusion. Success indicates you noticed and did not trigger the trap or whatever.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+        <section class="chapter">
+          <h2 id="skills">Skills</h2>
+          <div>
+            
+            <p>
+              Roll 1d6-4 in order for each category (minimum of 0).
+            </p>
+          </div>
+          <div>
+            
+            <ul>
+              <li> Alchemy</li>
+              <li> Appraisal</li>
+              <li> Climbing</li>
+              <li> Cooking</li>
+              <li> Decipher Script</li>
+              <li> Disguise</li>
+              <li> Escape Artist</li>
+              <li> Forgery</li>
+              <li> Herbalism</li>
+              <li> Jumping</li>
+              <li> Law</li>
+              <li> Medicine</li>
+              <li> Mining</li>
+              <li> Navigation</li>
+              <li> Pick Lock</li>
+              <li> Pick Pocket</li>
+              <li> Religion</li>
+              <li> Riding</li>
+              <li> Sailing</li>
+              <li> Smithing</li>
+              <li> Swimming</li>
+              <li> Tracking</li>
+            </ul>
+          </div>
+          <div>
+            
+            <p>
+              On level up, they receive 2 skill points that they may allocate as they choose.
+            </p>
+            <p>
+              Skills cap at 5.
+            </p>
+            <p>
+              0 points in something usually indicates you cannot do that thing at
+              all (completely untrained), with the exception of things like
+              climbing.
+            </p>
+            <p>
+              Skill checks are either gated (you need X in skill to do Y) or are a d6+skill roll against a target number.
+            </p>
+          </div>
+        </section>
+        <section class="chapter">
+          <h2 id="races">Races</h2>
+          <div>
+            
+            <p>
+              Roll your race:
+            </p>
+          </div>
+          <section>
+            
+            <table>
+              <thead>
+                <tr class="table_header">
+                  <th>d6 </th>
+                  <th> Race</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td>1-3 </td>
+                  <td> Human</td>
+                </tr>
+                <tr class="even">
+                  <td>4   </td>
+                  <td> Dwarf</td>
+                </tr>
+                <tr class="odd">
+                  <td>5   </td>
+                  <td> Elf</td>
+                </tr>
+                <tr class="even">
+                  <td>6   </td>
+                  <td> Special</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h3 id="special-races">Special Races</h3>
+            <table>
+              <thead>
+                <tr class="table_header">
+                  <th>d6 </th>
+                  <th> Special Race</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td>1-2 </td>
+                  <td> Hobbit</td>
+                </tr>
+                <tr class="even">
+                  <td>3   </td>
+                  <td> Half-orc</td>
+                </tr>
+                <tr class="odd">
+                  <td>4   </td>
+                  <td> ???</td>
+                </tr>
+                <tr class="even">
+                  <td>5   </td>
+                  <td> ???</td>
+                </tr>
+                <tr class="odd">
+                  <td>6   </td>
+                  <td> ???</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <div>
+            <h3 id="human">Human</h3>
+            <ul>
+              <li> The first time you die, ever, you instead don't. The referee will determine exactly how this happens. In combat, you fall unconscious but survive the battle at half hp. You even survive TPKs.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 id="dwarf">Dwarf</h3>
+            <ul>
+              <li> Cannot cast spells.</li>
+              <li> Hit dice are d8s instead of d6s.</li>
+              <li> -2 to ranged attacks.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 id="elf">Elf</h3>
+            <ul>
+              <li> +1 spell at first level (must be in robes or chain to cast it).</li>
+              <li> +1 attack</li>
+              <li> Hit dice are d4s instead of d6s.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 id="hobbit">Hobbit</h3>
+            <ul>
+              <li> -1 damage with weapons.</li>
+              <li> +1 attack with slings</li>
+              <li> Natural 1s are instead natural 20s for you.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 id="half-orc">Half-orc</h3>
+            <ul>
+              <li> +1 damage with melee weapons</li>
+              <li> -1 attack in bright light</li>
+            </ul>
+          </div>
+        </section>
+        <section class="chapter">
+          <h2 id="combat">Combat</h2>
+          <div>
+            
+            <p>
+              First, surprise is checked for. If a side is generally unaware of
+              the other, they are 2-in-6 to be surprised.  In a "random"
+              encounter, like the party encounters some monsters while walking
+              down a hallway, both sides are "generally unaware" and thus surprise
+              is checked for both. If both are surprised, then it's like neither
+              are surprised.
+            </p>
+            <p>
+              In a surprise round, the unsurprised side gets a free round. After
+              that round combat proceeds as normal.
+            </p>
+            <p>
+              If neither is surprised or they are both aware of each other, then
+              proceed to the usual combat procedure.
+            </p>
+            <p>
+              Sometimes, one side may be partially aware of the other or
+              completely aware but not expecting an attack.  In that circumstance,
+              their opponent goes first in the first round of combat instead of
+              rolling initiative.  Combat proceeds as normal after the first
+              round.
+            </p>
+            <p>
+              On the first round, both sides roll a d20 to determine which side
+              goes first.  If one side rolls a 1, they can only take one action
+              that round.  If one side rolls a 20, they may take an extra action
+              that round.  If both sides roll the same number, both sides reroll.
+            </p>
+            <p>
+              After the first round, each side alternates.
+            </p>
+          </div>
+          <section>
+            <h3 id="combat-actions">Combat Actions</h3>
+            <div>
+              
+              <p>
+                Each round, a character can take two actions. However, they can only
+                take one attack-type action each round.  An attack-type action is
+                defined as an attack, casting a spell, or activating a magic item
+                that is attack-like, or any action that describes itself as
+                attack-type.
+              </p>
+            </div>
+            <div>
+              
+              <ul>
+                <li> Move: A character can move 30ish feet. Moving out of an enemy's reach provokes an opportunity attack. If it hits you, your move ends. (You can take this action multiple times in one round). Unlike other games, you can't split your movement.</li>
+                <li> Melee Attack: A character makes an attack.</li>
+                <li> Ranged Attack: Make a ranged attack. This provokes from anyone within your reach. If they hit you, your attack is spoiled.</li>
+                <li> Cast a spell: A character casts a spell. Some spells require multiple actions. If a spell requires more than one action, you can cast it across turns, but if you take damage the spell is ruined. Casting a spell provokes an opportunity attack (certain spells specify they don't). If the attack hits, your spell is spoiled.</li>
+                <li> Bull Rush: Make an opposed attack roll against an enemy (referee may grant circumstance bonuses based on size, etc.). If you win, you and the enemy move up to 15' in the direction of the enemy from you, with neither of you provoking opportunity attacks. This is not attack-like.</li>
+                <li> Disengage: This round, you do not provoke opportunity attacks from moving, but you cannot move into the reach of enemies.</li>
+                <li> Defend: Attack-like. You get +2 AC this round.</li>
+                <li> Drink a potion: You retrieve a potion from your pack and drink it. This provokes an opportunity attack. If the attack hits, the potion falls to the ground and shatters.</li>
+                <li> Other: Referee adjudicates.</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <h3 id="miscellany1">Miscellany</h3>
+            <div>
+              
+              <p>
+                Prebuffing is banned. There's no justification, it just makes the game less fun.
+              </p>
+            </div>
+          </section>
+        </section>
+        
+      </div>
+    </div>
+  </body>
+</html>
