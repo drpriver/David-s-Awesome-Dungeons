@@ -3,8 +3,11 @@
 function d6(){
     return 1 + Math.floor(Math.random() * 6);
 }
+function d4(){
+    return 1 + Math.floor(Math.random() * 4);
+}
 function roll_character(){
-    const hp = 7 + d6();
+    let hp = 7 + d6();
     const gp = (d6()+d6()+d6())*10;
     const abilities = [ "Strength", "Dexterity", "Agility", "Constitution", "Wisdom", "Intellect", "Charisma"];
     const ability_scores = {};
@@ -26,9 +29,11 @@ function roll_character(){
     }
     else if(race_roll == 4){
         race = "Dwarf";
+        hp = 7 + d8();
     }
     else if(race_roll == 5){
         race = "Elf";
+        hp = 7 + d4();
     }
     else {
         const sub_roll = d6();
@@ -41,6 +46,9 @@ function roll_character(){
         else {
             race = "???";
         }
+    }
+    if(ability_scores['Constitution'] >= 15){
+        hp += 1;
     }
     function make_row(type, key, value){
         var td1 = document.createElement(type);
