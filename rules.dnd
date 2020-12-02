@@ -310,3 +310,8 @@ Combat::chapter
     ::text
       Prebuffing is banned. There's no justification, it just makes the
       game less fun.
+Character Creation::chapter
+  ::text
+    This is a lot of rolling, so you can automate it by clicking this button. You are left to decide your name, class, purchase equipment and choose your random first level ability (which only the referee knows the full list so he will give you your options once you have decided your class).
+  <button id="roll-button"> Roll a character! </button>
+  <div id="rolled-character"></div>
