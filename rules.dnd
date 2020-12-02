@@ -55,35 +55,35 @@ Equipment::section
 
     You can carry 12 slots of stuff.
 
-  Melee Weapons::table
+  Melee Weapons::table.equipment
     ::head
-      Kind | Damage | Price | Slot | Examples
+      Kind                | Damage | Price | Slots | Examples
     ::row
-      One-handed weapon | 1d6 | 15gp | 1 slot |sword, mace, axe, etc.
-      Two-handed weapon | 1d8 | 25gp | 2 slot |greatsword, maul, etc.
-      Small Weapon | 1d4 | 5gp | 0.5 slot | dagger, sap, etc.
-      Inferior One-handed weapon | 1d4 | 1gp | 1 slot | club, etc.
-      Inferior Two-handed weapon | 1d6 | 5gp | 2 slot | pitchfork, etc.
-  Ranged Weapons::table
+      One-handed          | 1d6    | 15gp  | 1     | sword, mace, axe, etc.
+      Two-handed          | 1d8    | 25gp  | 2     | greatsword, maul, etc.
+      Small Weapon        | 1d4    | 5gp   | 0.5   | dagger, sap, etc.
+      Inferior One-handed | 1d4    | 1gp   | 1     | club, etc.
+      Inferior Two-handed | 1d6    | 5gp   | 2     | pitchfork, etc.
+  Ranged Weapons::table.equipment
     ::head
-      Kind | Damage | Price | Slot | Examples
+      Kind     | Damage | Price | Slots | Examples
     ::row
-      Bow      | 1d6 | 25gp  | 2 slot | Shortbow, longbow
-      Crossbow | 1d8 | 30gp  | 2 slot | Crossbow
-      Sling    | 1d4 | 5gp   | 1 slot | Sling
-      Wand     | 1d6 | 100gp | 1 slot | Fire, Lightning or Frost
-      Staff    | 1d8 | 200gp | 2 slot | Fire, Lightning or Frost
-      Ammo     | --- | 5gp   | 1 slot | 20 arrows
+      Bow      | 1d6    | 25gp  | 2     | Shortbow, longbow
+      Crossbow | 1d8    | 30gp  | 2     | Crossbow
+      Sling    | 1d4    | 5gp   | 1     | Sling
+      Wand     | 1d6    | 100gp | 1     | Fire, Lightning or Frost
+      Staff    | 1d8    | 200gp | 2     | Fire, Lightning or Frost
+      Ammo     | ---    | 5gp   | 1     | 20 arrows
   Armor::section
-    ::table
+    ::table.equipment
       ::head
-        Kind | AC Bonus | Price | Slots
+        Kind    | AC Bonus | Price  | Slots
       ::row
-        Shield  | +1 | 20gp   | 1 slot
-        Plate   | +6 | 1000gp | 4 slot
-        Chain   | +4 | 200gp  | 3 slot
-        Leather | +2 | 25gp   | 1 slot
-        Robes   | +1 | 10gp   | 3 slot
+        Shield  | +1       | 20gp   | 1
+        Plate   | +6       | 1000gp | 4
+        Chain   | +4       | 200gp  | 3
+        Leather | +2       | 25gp   | 1
+        Robes   | +1       | 10gp   | 3
     ::text
       Magic Users can only cast spells if wearing robes (magic works in
       strange ways).
@@ -96,17 +96,17 @@ Equipment::section
       Sneaking requires leather armor or no armor.
 
       Magic works in strange ways and requires wearing robes.
-  Miscellany::table
+  Miscellany::table.equipment
     ::head
-      Thing | Price | Slot
+      Thing          | Price  | Slots
     ::row
-      Rope, 50'      | 5gp    | 1 slot
-      Potions        | Varies | 1 slot
-      Lantern        | 5gp    | 1 slot
-      Torches (5)    | 1gp    | 1 slot
-      200 gold coins | ---    | 1 slot
-      10-foot pole   | ---    | 3 slots
-      Lockpicks      | 20gp   | 1 slot
+      Rope, 50'      | 5gp    | 1
+      Potions        | Varies | 1
+      Lantern        | 5gp    | 1
+      Torches (5)    | 1gp    | 1
+      200 gold coins | ---    | 1
+      10-foot pole   | ---    | 3
+      Lockpicks      | 20gp   | 1
 
 
 Classes::chapter
@@ -137,7 +137,7 @@ Ability Scores::chapter
     Roll 3d6 in order.
   ::table
     ::head
-      Ability | Effect
+      Ability      | Effect
     ::row
       Strength     | 15 Strength adds +1 damage to melee and thrown
       Dexterity    | 15 Dex adds +1 to ranged and thrown attacks
@@ -156,7 +156,7 @@ Saving Throws::chapter
     category than their level.
   ::table
     ::head
-      Category | Description
+      Category        | Description
     ::row
       Fortitude Save  | Save against poisons, noxious fumes, etc.
       Will Save       | Save against non-physical effects like charms.
@@ -207,7 +207,7 @@ Races::chapter
     Roll your race:
   ::table
     ::head
-      d6 | Race
+      d6  | Race
     ::row
       1-3 | Human
       4   | Dwarf
@@ -215,7 +215,7 @@ Races::chapter
       6   | Special
   Special Races::table
     ::head
-      d6 | Special Race
+      d6  | Special Race
     ::row
       1-2 | Hobbit
       3   | Half-orc

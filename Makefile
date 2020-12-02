@@ -1,7 +1,7 @@
 .SUFFIXES:
 ALL=rules.dnd
 
-index.html: strip $(ALL) dd.css dd.js links.json Makefile
+index.html: $(ALL) dd.css dd.js links.json Makefile
 	rm -rf build
 	mkdir build
 	cat $(ALL) > build/rules.dnd
@@ -23,3 +23,4 @@ make clean:
 .PHONY: strip
 strip:
 	python3 stripper.py
+$(ALL): strip

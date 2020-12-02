@@ -17,19 +17,27 @@ def find_files(d):
 def main():
     files = find_files('.')
     for f in files:
+        changed = False
         with open(f, 'r') as fp:
             lines = []
             for line in fp:
-                line = line.rstrip()
+                stripped = line.rstrip()
+                if stripped+'\n' != line:
+                    changed = True
+                line = stripped
                 if not line and not lines:
+                    changed = True
                     continue
                 lines.append(line)
             if lines:
                 while not lines[-1]:
+                    changed = True
                     lines.pop()
-        with open(f, 'w') as fp:
-            for line in lines:
-                print(line, file=fp)
+        if changed:
+            print(f)
+            with open(f, 'w') as fp:
+                for line in lines:
+                    print(line, file=fp)
     
 if __name__ == '__main__':
     main()
