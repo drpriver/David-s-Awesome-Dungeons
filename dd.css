@@ -435,6 +435,15 @@ table.level_table .odd {
 
 
 @media only screen and (max-width: 720px) {
+    body {
+	    font-size:12px;
+    }
+    table.equipment tr td:nth-child(5) {
+        display: none;
+    }
+    table.equipment tr th:nth-child(5) {
+        display: none;
+    }
     .center {
         max-width: 100%;
         padding-left:16px;

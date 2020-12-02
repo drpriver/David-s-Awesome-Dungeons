@@ -9,10 +9,6 @@ function d4(){
 function d8(){
     return 1 + Math.floor(Math.random() * 8);
 }
-function wow_you_cheater(){
-    const roll_button = document.getElementById("roll-button");
-    roll_button.innerHTML = "You cheater!";
-}
 function roll_character(){
     let hp = 7 + d6();
     const gp = (d6()+d6()+d6())*10;
@@ -87,7 +83,7 @@ function roll_character(){
     output_div.innerHTML = "";
     output_div.appendChild(output);
     const roll_button = document.getElementById("roll-button");
-    roll_button.onclick = wow_you_cheater;
+    roll_button.remove();
 }
 function onload(){
     {
