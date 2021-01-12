@@ -1,26 +1,31 @@
 .SUFFIXES:
-ALL=rules.dnd
+DEPDIR := Depends
+$(DEPDIR): ; @mkdir -p $@
+%.dep: ;
+DEPFILES:= $(wildcard $(DEPDIR)/*.dep)
+$(DEPFILES):
+include $(DEPFILES)
 
-index.html: $(ALL) dd.css dd.js links.json Makefile
-	rm -rf build
-	mkdir build
-	cat $(ALL) > build/rules.dnd
-	python3 -m ez_dungeon.document build/rules.dnd build
-	cp build/rules.html index.html
-	rm -rf build
+BUILDDIR := Build
+$(BUILDDIR): ; mkdir -p $@
 
-validate:
-	python3 -m ez_dungeon.html_validate index.html
+index.html: $(BUILDDIR)/rules.html
+	cp $(BUILDDIR)/rules.html index.html
 
-$(basename $(ALL)):
-	rm -rf build
-	mkdir build
-	python3 -m ez_dungeon.document $(addsuffix .dnd,$@) build
+$(BUILDDIR)/rules.html: $(DEPDIR)/rules.dep | $(DEPDIR) $(BUILDDIR)
+	python3 -m ezhtml rules.dnd $(BUILDDIR) -d $(DEPDIR)/rules.dep
 
-make clean:
+
+.PHONY: validate
+validate: index.html
+	python3 -m ezhtml.html_validate index.html
+
+.PHONY: clean
+clean:
 	rm -f index.html
-.DEFAULT:index.html
+	rm -rf $(BUILDDIR)
+
+.DEFAULT_GOAL:=index.html
 .PHONY: strip
 strip:
 	python3 stripper.py
-$(ALL): strip

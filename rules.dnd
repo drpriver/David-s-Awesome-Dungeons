@@ -1,18 +1,21 @@
+::stylesheets
+  rules.css
+::scripts
+  onload.js
+  character.js
 David's Awesome Dungeon::title
 
 Level Table::section
   ::table.level_table
-    ::head
-      Level |    XP | GP cost
-    ::row
-      1     |     0 |     0
-      2     |   500 |   100
-      3     |  1500 |   250
-      4     |  4000 |  1000
-      5     |  8000 |  2000
-      6     | 16000 |  4000
-      7     | 32000 |  8000
-      8     | 64000 | 16000
+    Level |    XP | GP cost
+    1     |     0 |     0
+    2     |   500 |   100
+    3     |  1500 |   250
+    4     |  4000 |  1000
+    5     |  8000 |  2000
+    6     | 16000 |  4000
+    7     | 32000 |  8000
+    8     | 64000 | 16000
 
 Experience::text
   Experience points are rewarded for monsters slain (10xp per hit die)
@@ -32,97 +35,88 @@ Level up::text
   The special ability will describe how often it can be used (maybe all
   the time).
 
-HP::section
-  ::bullets
-    * 7+1d6 at level 1.
-    * +1d6 each level.
-    * You die at 0.
-  ::text
-    Healing can be purchased at 5gp per hp from a clergyman.
+HP::md
+  * 7+1d6 at level 1.
+  * +1d6 each level.
+  * You die at 0.
 
-    Healing Potions exist, healing 7 hp. Alchemists sell them for 100gp
-    each.
+  Healing can be purchased at 5gp per hp from a clergyman.
 
-    Healing by resting heals 1hp every other day, starting on the second
-    day.
+  Healing Potions exist, healing 7 hp. Alchemists sell them for 100gp
+  each.
+
+  Healing by resting heals 1hp every other day, starting on the second
+  day.
 
 Attack Bonus::section
   All characters get +1 attack per level.
 
-Equipment::section
-  ::text
-    A character starts with 3d6*10gp which they can use to buy equipment.
+Equipment::md
+  A character starts with 3d6*10gp which they can use to buy equipment.
 
-    You can carry 12 slots of stuff.
+  You can carry 12 slots of stuff.
 
   Melee Weapons::table.equipment
-    ::head
-      Kind                | Damage | Price | Slots | Examples
-    ::row
-      One-handed          | 1d6    | 15gp  | 1     | sword, mace, axe, etc.
-      Two-handed          | 1d8    | 25gp  | 2     | greatsword, maul, etc.
-      Small Weapon        | 1d4    | 5gp   | 0.5   | dagger, sap, etc.
-      Inferior One-handed | 1d4    | 1gp   | 1     | club, etc.
-      Inferior Two-handed | 1d6    | 5gp   | 2     | pitchfork, etc.
+    Kind                | Damage | Price | Slots | Examples
+    One-handed          | 1d6    | 15gp  | 1     | sword, mace, axe, etc.
+    Two-handed          | 1d8    | 25gp  | 2     | greatsword, maul, etc.
+    Small Weapon        | 1d4    | 5gp   | 0.5   | dagger, sap, etc.
+    Inferior One-handed | 1d4    | 1gp   | 1     | club, etc.
+    Inferior Two-handed | 1d6    | 5gp   | 2     | pitchfork, etc.
   Ranged Weapons::table.equipment
-    ::head
-      Kind     | Damage | Price | Slots | Examples
-    ::row
-      Bow      | 1d6    | 25gp  | 2     | Shortbow, longbow
-      Crossbow | 1d8    | 30gp  | 2     | Crossbow
-      Sling    | 1d4    | 5gp   | 1     | Sling
-      Wand     | 1d6    | 100gp | 1     | Fire, Lightning or Frost
-      Staff    | 1d8    | 200gp | 2     | Fire, Lightning or Frost
-      Ammo     | ---    | 5gp   | 1     | 20 arrows
-  Armor::section
+    Kind     | Damage | Price | Slots | Examples
+    Bow      | 1d6    | 25gp  | 2     | Shortbow, longbow
+    Crossbow | 1d8    | 30gp  | 2     | Crossbow
+    Sling    | 1d4    | 5gp   | 1     | Sling
+    Wand     | 1d6    | 100gp | 1     | Fire, Lightning or Frost
+    Staff    | 1d8    | 200gp | 2     | Fire, Lightning or Frost
+    Ammo     | ---    | 5gp   | 1     | 20 arrows
+  Armor::md
     ::table.equipment
-      ::head
-        Kind    | AC Bonus | Price  | Slots
-      ::row
-        Shield  | +1       | 20gp   | 1
-        Plate   | +6       | 1000gp | 4
-        Chain   | +4       | 200gp  | 3
-        Leather | +2       | 25gp   | 1
-        Robes   | +1       | 10gp   | 3
-    ::text
-      Magic Users can only cast spells if wearing robes (magic works in
-      strange ways).
+      Kind    | AC Bonus | Price  | Slots
+      Shield  | +1       | 20gp   | 1
+      Plate   | +6       | 1000gp | 4
+      Chain   | +4       | 200gp  | 3
+      Leather | +2       | 25gp   | 1
+      Robes   | +1       | 10gp   | 3
+    Magic Users can only cast spells if wearing robes (magic works in
+    strange ways).
 
-      Fighter-Mages can only cast spells if wearing robes or chain.
+    Fighter-Mages can only cast spells if wearing robes or chain.
 
-      Magic Users and Fighter Mages cannot cast spells while using a
-      shield.
+    Magic Users and Fighter Mages cannot cast spells while using a
+    shield.
 
-      Sneaking requires leather armor or no armor.
+    Sneaking requires leather armor or no armor.
 
-      Magic works in strange ways and requires wearing robes.
+    Magic works in strange ways and requires wearing robes.
   Miscellany::table.equipment
-    ::head
-      Thing          | Price  | Slots
-    ::row
-      Rope, 50'      | 5gp    | 1
-      Potions        | Varies | 1
-      Lantern        | 5gp    | 1
-      Torches (5)    | 1gp    | 1
-      200 gold coins | ---    | 1
-      10-foot pole   | ---    | 3
-      Lockpicks      | 20gp   | 1
+    Thing          | Price  | Slots
+    Rope, 50'      | 5gp    | 1
+    Potions        | Varies | 1
+    Lantern        | 5gp    | 1
+    Torches (5)    | 1gp    | 1
+    200 gold coins | ---    | 1
+    10-foot pole   | ---    | 3
+    Lockpicks      | 20gp   | 1
 
 
 Classes::chapter
-  Fighter::bullets
+  Fighter::md
     * +1 hp/level
     * +1 dmg/level
     * Cannot use scrolls, wands, staves.
     * Can use magic weapons.
-  Magic User::bullets
+
+  Magic User::md
     * Can use scrolls, wands, staves.
     * Cannot use magic weapons.
     * Cannot use shields.
     * Can cast spells in Robes.
     * +1 spell/level (choose from one of 3 at random).
     * Magic User spells can be used once every 10 minutes per spell.
-  Fighter-Mage::bullets
+
+  Fighter-Mage::md
     * Can use wands, staves but not scrolls.
     * Can use magical one-handed weapons, but not others.
     * Can cast spells in Chain, Robes.
@@ -136,37 +130,39 @@ Ability Scores::chapter
   ::text
     Roll 3d6 in order.
   ::table
-    ::head
-      Ability      | Effect
-    ::row
-      Strength     | 15 Strength adds +1 damage to melee and thrown
-      Dexterity    | 15 Dex adds +1 to ranged and thrown attacks
-      Agility      | 15 Agility adds +1 AC.
-      Constitution | 15 Constitution adds +0.5 hp/level (rounded up).
-      Wisdom       | 15 Wisdom adds +1 to will saves.
-      Intellect    | 15 Intellect grants a random spell.
-      Charisma     | 15 Charisma adds +1 to the party's reaction rolls (stacks).
+    Ability      | Effect
+    Strength     | 15 Strength adds +1 damage to melee and thrown
+    Dexterity    | 15 Dex adds +1 to ranged and thrown attacks
+    Agility      | 15 Agility adds +1 AC and +1 to reflex saves.
+    Constitution | 15 Constitution adds +2 to fortitude saves.
+    Wisdom       | 15 Wisdom adds +1 to spell saves.
+    Intellect    | 15 Intellect grants a random spell.
+    Charisma     | 15 Charisma allows 1 sidekick.
 
 Saving Throws::chapter
-  ::text
-    Characters start at +0 in each category.
+  ::md
+    Characters start with a bonus according to the below table in each
+    category.  The target number for a saving throw is 20. The exception to
+    this is that spells originating from magical items are 2 points easier to
+    save against.
+    A natural 1 always fails a saving throw.
+    ::table
+      Category        | Description                                                                    | Base Bonus
+      Perception Save | Save against a trap or illusion.                                               | +7
+      Fortitude Save  | Save against poisons, paralyzation, gases and death effects.                   | +10
+      Reflex Save     | Save against dragon's breath, fireballs, etc.                                  | +6
+      Spell Save      | Save against non-physical effects like charms, polymorphs. Catch-all category. | +4
+    On level character receives 2 saving throw points that they may allocate as
+    they choose. They cannot allocate more than 1 point to a single category at a time.
 
-    On level up they receive 2 saving throw points that they may
-    allocate as they choose.  They may not have more points in a
-    category than their level.
-  ::table
-    ::head
-      Category        | Description
-    ::row
-      Fortitude Save  | Save against poisons, noxious fumes, etc.
-      Will Save       | Save against non-physical effects like charms.
-      Reflex Save     | Save against dragon's breath, fireballs, etc.
-      Perception Save | Save against a trap or illusion.
+    A character does not save more than once against a single event. Sometimes
+    there is conceptual overlap and it is unclear which category to apply.
+    Apply the first category in the list, or the referee may make a judgement.
+    For example, a dragon that breathes poison gas is a fortitude save. A poison needle on a chest is a perception save.
 
 Skills::chapter
-  ::text
+  ::md
     Roll 1d6-4 in order for each category (minimum of 0).
-  ::bullets
     * Alchemy
     * Appraisal
     * Climbing
@@ -189,7 +185,6 @@ Skills::chapter
     * Smithing
     * Swimming
     * Tracking
-  ::text
     On level up, they receive 2 skill points that they may allocate as
     they choose.
 
@@ -203,49 +198,49 @@ Skills::chapter
     d6+skill roll against a target number.
 
 Races::chapter
-  ::text
+  ::md
     Roll your race:
-  ::table
-    ::head
+    ::table
       d6  | Race
-    ::row
       1-3 | Human
       4   | Dwarf
       5   | Elf
       6   | Special
-  Special Races::table
-    ::head
+    Special Races::table
       d6  | Special Race
-    ::row
       1-2 | Hobbit
       3   | Half-orc
       4   | ???
       5   | ???
       6   | ???
 
-  Human::bullets
+    Human::h
     * The first time you die, ever, you instead don't. The referee will
       determine exactly how this happens. In combat, you fall
       unconscious but survive the battle at half hp. You even survive
       TPKs.
-  Dwarf::bullets
+
+    Dwarf::h
     * Cannot cast spells.
     * Hit dice are d8s instead of d6s.
     * -2 to ranged attacks.
-  Elf::bullets
+
+    Elf::h
     * +1 spell at first level (must be in robes or chain to cast it).
     * +1 attack
     * Hit dice are d4s instead of d6s.
-  Hobbit::bullets
+
+    Hobbit::h
     * -1 damage with weapons.
     * +1 attack with slings
     * Natural 1s are instead natural 20s for you.
-  Half-orc::bullets
+
+    Half-orc::h
     * +1 damage with melee weapons
     * -1 attack in bright light
 
 Combat::chapter
-  ::text
+  ::md
     First, surprise is checked for. If a side is generally unaware of
     the other, they are 2-in-6 to be surprised.  In a "random"
     encounter, like the party encounters some monsters while walking
@@ -272,46 +267,49 @@ Combat::chapter
 
     After the first round, each side alternates.
 
-  Combat Actions::section
-    ::text
-      Each round, a character can take two actions. However, they can
-      only take one attack-type action each round.  An attack-type
-      action is defined as an attack, casting a spell, or activating a
-      magic item that is attack-like, or any action that describes
-      itself as attack-type.
-    ::bullets
-      * Move: A character can move 30ish feet. Moving out of an enemy's
-        reach provokes an opportunity attack. If it hits you, your move
-        ends. (You can take this action multiple times in one round).
-        Unlike other games, you can't split your movement.
-      * Melee Attack: A character makes an attack.
-      * Ranged Attack: Make a ranged attack. This provokes from anyone
-        within your reach. If they hit you, your attack is spoiled.
-      * Cast a spell: A character casts a spell. Some spells require
-        multiple actions. If a spell requires more than one action, you
-        can cast it across turns, but if you take damage the spell is
-        ruined. Casting a spell provokes an opportunity attack (certain
-        spells specify they don't). If the attack hits, your spell is
-        spoiled.
-      * Bull Rush: Make an opposed attack roll against an enemy (referee
-        may grant circumstance bonuses based on size, etc.). If you win,
-        you and the enemy move up to 15' in the direction of the enemy
-        from you, with neither of you provoking opportunity attacks.
-        This is not attack-like.
-      * Disengage: This round, you do not provoke opportunity attacks
-        from moving, but you cannot move into the reach of enemies.
-      * Defend: Attack-like. You get +2 AC this round.
-      * Drink a potion: You retrieve a potion from your pack and drink
-        it. This provokes an opportunity attack. If the attack hits, the
-        potion falls to the ground and shatters.
-      * Other: Referee adjudicates.
+  Combat Actions::md
+    Each round, a character can take two actions. However, they can
+    only take one attack-type action each round.  An attack-type
+    action is defined as an attack, casting a spell, or activating a
+    magic item that is attack-like, or any action that describes
+    itself as attack-type.
 
-  Miscellany::section
-    ::text
-      Prebuffing is banned. There's no justification, it just makes the
-      game less fun.
+    * Move: A character can move 30ish feet. Moving out of an enemy's
+      reach provokes an opportunity attack. If it hits you, your move
+      ends. (You can take this action multiple times in one round).
+      Unlike other games, you can't split your movement.
+    * Melee Attack: A character makes an attack.
+    * Ranged Attack: Make a ranged attack. This provokes from anyone
+      within your reach. If they hit you, your attack is spoiled.
+    * Cast a spell: A character casts a spell. Some spells require
+      multiple actions. If a spell requires more than one action, you
+      can cast it across turns, but if you take damage the spell is
+      ruined. Casting a spell provokes an opportunity attack (certain
+      spells specify they don't). If the attack hits, your spell is
+      spoiled.
+    * Bull Rush: Make an opposed attack roll against an enemy (referee
+      may grant circumstance bonuses based on size, etc.). If you win,
+      you and the enemy move up to 15' in the direction of the enemy
+      from you, with neither of you provoking opportunity attacks.
+      This is not attack-like.
+    * Disengage: This round, you do not provoke opportunity attacks
+      from moving, but you cannot move into the reach of enemies.
+    * Defend: Attack-like. You get +2 AC this round.
+    * Drink a potion: You retrieve a potion from your pack and drink
+      it. This provokes an opportunity attack. If the attack hits, the
+      potion falls to the ground and shatters.
+    * Other: Referee adjudicates.
+
+  Miscellaneous::md
+    Prebuffing is banned. There's no justification, it just makes the
+    game less fun.
 Character Creation::chapter
   ::text
-    This is a lot of rolling, so you can automate it by clicking this button. You are left to decide your name, class, purchase equipment and choose your random first level ability (which only the referee knows the full list so he will give you your options once you have decided your class).
-  <button id="roll-button"> Roll a character! </button>
-  <div id="rolled-character"></div>
+    This is a lot of rolling, so you can automate it by clicking this button.
+    You are left to decide your name, class, purchase equipment and choose your
+    random first level ability (which only the referee knows the full list so
+    he will give you your options once you have decided your class).
+  ::raw
+   <button id="roll-button"> Roll a character! </button>
+   <div id="rolled-character"></div>
+  ::endraw

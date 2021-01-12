@@ -1,3 +1,5 @@
 TXTS
 build
 .DS_Store
+Depends
+*.dep
