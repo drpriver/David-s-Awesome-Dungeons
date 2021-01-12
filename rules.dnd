@@ -5,7 +5,7 @@
   character.js
 David's Awesome Dungeon::title
 
-Level Table::section
+Level Table::md
   ::table.level_table
     Level |    XP | GP cost
     1     |     0 |     0
@@ -17,18 +17,20 @@ Level Table::section
     7     | 32000 |  8000
     8     | 64000 | 16000
 
-Experience::text
-  Experience points are rewarded for monsters slain (10xp per hit die)
-  and for treasure retrieved (1xp per gp).  Experience points are
-  evenly divided amongst the party.  If any NPCs accompanied the
-  party, the XP is also divided to them, unless they are complete
-  non-adventuring NPCs (camp-followers etc. who do not actually do any
-  adventuring and just cook meals for example).  Experience points are
-  rewarded upon return to "town".  Leveling up requires gold and as
-  many days as the new level (so to advance from level 1 to 2 takes 2
-  days).
+Experience::md
+  Experience points are rewarded for monsters slain (10xp per hit die) and for
+  treasure retrieved (1xp per gp).  
 
-Level up::text
+  Experience points are evenly divided amongst the party.  If any NPCs
+  accompanied the party, the XP is also divided to them, unless they are
+  complete non-adventuring NPCs (camp-followers etc. who do not actually do any
+  adventuring and just cook meals for example).  
+
+  Experience points are rewarded upon return to "town".  Leveling up requires
+  gold and as many days as the new level (so to advance from level 1 to 2 takes
+  2 days).
+
+Level up::md
   On level up, you are presented with a choice of 3 special abilities.
   Pick one of them.
 
@@ -48,7 +50,7 @@ HP::md
   Healing by resting heals 1hp every other day, starting on the second
   day.
 
-Attack Bonus::section
+Attack Bonus::md
   All characters get +1 attack per level.
 
 Equipment::md
@@ -57,14 +59,14 @@ Equipment::md
   You can carry 12 slots of stuff.
 
   Melee Weapons::table.equipment
-    Kind                | Damage | Price | Slots | Examples
+    Kind                | Dmg | Price | Slots | Examples
     One-handed          | 1d6    | 15gp  | 1     | sword, mace, axe, etc.
     Two-handed          | 1d8    | 25gp  | 2     | greatsword, maul, etc.
     Small Weapon        | 1d4    | 5gp   | 0.5   | dagger, sap, etc.
     Inferior One-handed | 1d4    | 1gp   | 1     | club, etc.
     Inferior Two-handed | 1d6    | 5gp   | 2     | pitchfork, etc.
   Ranged Weapons::table.equipment
-    Kind     | Damage | Price | Slots | Examples
+    Kind     | Dmg | Price | Slots | Examples
     Bow      | 1d6    | 25gp  | 2     | Shortbow, longbow
     Crossbow | 1d8    | 30gp  | 2     | Crossbow
     Sling    | 1d4    | 5gp   | 1     | Sling
@@ -73,7 +75,7 @@ Equipment::md
     Ammo     | ---    | 5gp   | 1     | 20 arrows
   Armor::md
     ::table.equipment
-      Kind    | AC Bonus | Price  | Slots
+      Kind    | AC | Price  | Slots
       Shield  | +1       | 20gp   | 1
       Plate   | +6       | 1000gp | 4
       Chain   | +4       | 200gp  | 3
@@ -127,17 +129,17 @@ Classes::chapter
 
 
 Ability Scores::chapter
-  ::text
+  ::md
     Roll 3d6 in order.
-  ::table
-    Ability      | Effect
-    Strength     | 15 Strength adds +1 damage to melee and thrown
-    Dexterity    | 15 Dex adds +1 to ranged and thrown attacks
-    Agility      | 15 Agility adds +1 AC and +1 to reflex saves.
-    Constitution | 15 Constitution adds +2 to fortitude saves.
-    Wisdom       | 15 Wisdom adds +1 to spell saves.
-    Intellect    | 15 Intellect grants a random spell.
-    Charisma     | 15 Charisma allows 1 sidekick.
+    ::table
+      Ability      | Effect
+      Strength     | 15 Strength adds +1 damage to melee and thrown
+      Dexterity    | 15 Dex adds +1 to ranged and thrown attacks
+      Agility      | 15 Agility adds +1 AC and +1 to reflex saves.
+      Constitution | 15 Constitution adds +2 to fortitude saves.
+      Wisdom       | 15 Wisdom adds +1 to spell saves.
+      Intellect    | 15 Intellect grants a random spell.
+      Charisma     | 15 Charisma allows 1 sidekick.
 
 Saving Throws::chapter
   ::md
@@ -152,7 +154,7 @@ Saving Throws::chapter
       Fortitude Save  | Save against poisons, paralyzation, gases and death effects.                   | +10
       Reflex Save     | Save against dragon's breath, fireballs, etc.                                  | +6
       Spell Save      | Save against non-physical effects like charms, polymorphs. Catch-all category. | +4
-    On level character receives 2 saving throw points that they may allocate as
+    Upon level up, a character receives 2 saving throw points that they may allocate as
     they choose. They cannot allocate more than 1 point to a single category at a time.
 
     A character does not save more than once against a single event. Sometimes
@@ -214,30 +216,30 @@ Races::chapter
       5   | ???
       6   | ???
 
-    Human::h
-    * The first time you die, ever, you instead don't. The referee will
-      determine exactly how this happens. In combat, you fall
-      unconscious but survive the battle at half hp. You even survive
-      TPKs.
+    Human::md
+      * The first time you die, ever, you instead don't. The referee will
+        determine exactly how this happens. In combat, you fall
+        unconscious but survive the battle at half hp. You even survive
+        TPKs.
 
-    Dwarf::h
-    * Cannot cast spells.
-    * Hit dice are d8s instead of d6s.
-    * -2 to ranged attacks.
+    Dwarf::md
+      * Cannot cast spells.
+      * Hit dice are d8s instead of d6s.
+      * -2 to ranged attacks.
 
-    Elf::h
-    * +1 spell at first level (must be in robes or chain to cast it).
-    * +1 attack
-    * Hit dice are d4s instead of d6s.
+    Elf::md
+      * +1 spell at first level (must be in robes or chain to cast it).
+      * +1 attack
+      * Hit dice are d4s instead of d6s.
 
-    Hobbit::h
-    * -1 damage with weapons.
-    * +1 attack with slings
-    * Natural 1s are instead natural 20s for you.
+    Hobbit::md
+      * -1 damage with weapons.
+      * +1 attack with slings
+      * Natural 1s are instead natural 20s for you.
 
-    Half-orc::h
-    * +1 damage with melee weapons
-    * -1 attack in bright light
+    Half-orc::md
+      * +1 damage with melee weapons
+      * -1 attack in bright light
 
 Combat::chapter
   ::md
@@ -274,37 +276,46 @@ Combat::chapter
     magic item that is attack-like, or any action that describes
     itself as attack-type.
 
-    * Move: A character can move 30ish feet. Moving out of an enemy's
+    Move::md.def
+      A character can move 30ish feet. Moving out of an enemy's
       reach provokes an opportunity attack. If it hits you, your move
       ends. (You can take this action multiple times in one round).
       Unlike other games, you can't split your movement.
-    * Melee Attack: A character makes an attack.
-    * Ranged Attack: Make a ranged attack. This provokes from anyone
+    Melee Attack::md.def 
+      A character makes an attack.
+    Ranged Attack::md.def
+      Make a ranged attack. This provokes from anyone
       within your reach. If they hit you, your attack is spoiled.
-    * Cast a spell: A character casts a spell. Some spells require
+    Cast a spell::md.def 
+      A character casts a spell. Some spells require
       multiple actions. If a spell requires more than one action, you
       can cast it across turns, but if you take damage the spell is
       ruined. Casting a spell provokes an opportunity attack (certain
       spells specify they don't). If the attack hits, your spell is
       spoiled.
-    * Bull Rush: Make an opposed attack roll against an enemy (referee
+    Bull Rush::md.def
+      Make an opposed attack roll against an enemy (referee
       may grant circumstance bonuses based on size, etc.). If you win,
       you and the enemy move up to 15' in the direction of the enemy
       from you, with neither of you provoking opportunity attacks.
       This is not attack-like.
-    * Disengage: This round, you do not provoke opportunity attacks
+    Disengage::md.def
+      This round, you do not provoke opportunity attacks
       from moving, but you cannot move into the reach of enemies.
-    * Defend: Attack-like. You get +2 AC this round.
-    * Drink a potion: You retrieve a potion from your pack and drink
+    Defend::md.def
+      Attack-like. You get +2 AC this round.
+    Drink a potion::md.def
+      You retrieve a potion from your pack and drink
       it. This provokes an opportunity attack. If the attack hits, the
       potion falls to the ground and shatters.
-    * Other: Referee adjudicates.
+    Other::md.def
+      Referee adjudicates.
 
   Miscellaneous::md
     Prebuffing is banned. There's no justification, it just makes the
     game less fun.
 Character Creation::chapter
-  ::text
+  ::md
     This is a lot of rolling, so you can automate it by clicking this button.
     You are left to decide your name, class, purchase equipment and choose your
     random first level ability (which only the referee knows the full list so

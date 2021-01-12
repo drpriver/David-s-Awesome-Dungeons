@@ -427,12 +427,9 @@ table.level_table .odd {
     background-color: rgb(205,200,184);
 }
 
-
-
-
-
-
-
+div.def div {
+	padding-left:1em;
+}
 
 @media only screen and (max-width: 720px) {
     body {

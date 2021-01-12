@@ -433,12 +433,9 @@ table.level_table .odd {
     background-color: rgb(205,200,184);
 }
 
-
-
-
-
-
-
+div.def div {
+	padding-left:1em;
+}
 
 @media only screen and (max-width: 720px) {
     body {
@@ -651,7 +648,7 @@ data_blob={}
 <div class="center">
 
 <h1 id="davids-awesome-dungeon">David's Awesome Dungeon</h1>
-<section>
+<div>
 <h2 id="level-table">Level Table</h2>
 <div>
 
@@ -707,23 +704,32 @@ data_blob={}
 </tbody>
 </table>
 </div>
-</section>
+</div>
 <div>
 <h2 id="experience">Experience</h2>
+<div>
+
 <p>
-Experience points are rewarded for monsters slain (10xp per hit die)
-and for treasure retrieved (1xp per gp).  Experience points are
-evenly divided amongst the party.  If any NPCs accompanied the
-party, the XP is also divided to them, unless they are complete
-non-adventuring NPCs (camp-followers etc. who do not actually do any
-adventuring and just cook meals for example).  Experience points are
-rewarded upon return to "town".  Leveling up requires gold and as
-many days as the new level (so to advance from level 1 to 2 takes 2
-days).
+Experience points are rewarded for monsters slain (10xp per hit die) and for
+treasure retrieved (1xp per gp).
 </p>
+<p>
+Experience points are evenly divided amongst the party.  If any NPCs
+accompanied the party, the XP is also divided to them, unless they are
+complete non-adventuring NPCs (camp-followers etc. who do not actually do any
+adventuring and just cook meals for example).
+</p>
+<p>
+Experience points are rewarded upon return to "town".  Leveling up requires
+gold and as many days as the new level (so to advance from level 1 to 2 takes
+2 days).
+</p>
+</div>
 </div>
 <div>
 <h2 id="level-up">Level up</h2>
+<div>
+
 <p>
 On level up, you are presented with a choice of 3 special abilities.
 Pick one of them.
@@ -732,6 +738,7 @@ Pick one of them.
 The special ability will describe how often it can be used (maybe all
 the time).
 </p>
+</div>
 </div>
 <div>
 <h2 id="hp">HP</h2>
@@ -758,10 +765,15 @@ day.
 </p>
 </div>
 </div>
-<section>
+<div>
 <h2 id="attack-bonus">Attack Bonus</h2>
+<div>
+
+<p>
 All characters get +1 attack per level.
-</section>
+</p>
+</div>
+</div>
 <div>
 <h2 id="equipment">Equipment</h2>
 <div>
@@ -779,7 +791,7 @@ You can carry 12 slots of stuff.
 <thead>
 <tr class="table_header">
 <th>Kind                </th>
-<th> Damage </th>
+<th> Dmg </th>
 <th> Price </th>
 <th> Slots </th>
 <th> Examples</th>
@@ -830,7 +842,7 @@ You can carry 12 slots of stuff.
 <thead>
 <tr class="table_header">
 <th>Kind     </th>
-<th> Damage </th>
+<th> Dmg </th>
 <th> Price </th>
 <th> Slots </th>
 <th> Examples</th>
@@ -890,7 +902,7 @@ You can carry 12 slots of stuff.
 <thead>
 <tr class="table_header">
 <th>Kind    </th>
-<th> AC Bonus </th>
+<th> AC </th>
 <th> Price  </th>
 <th> Slots</th>
 </tr>
@@ -1048,6 +1060,8 @@ Magic works in strange ways and requires wearing robes.
 <h2 id="ability-scores">Ability Scores</h2>
 <div>
 
+<div>
+
 <p>
 Roll 3d6 in order.
 </p>
@@ -1092,6 +1106,7 @@ Roll 3d6 in order.
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </section>
 <section class="chapter">
@@ -1145,7 +1160,7 @@ A natural 1 always fails a saving throw.
 <div>
 
 <p>
-On level character receives 2 saving throw points that they may allocate as
+Upon level up, a character receives 2 saving throw points that they may allocate as
 they choose. They cannot allocate more than 1 point to a single category at a time.
 </p>
 <p>
@@ -1287,6 +1302,7 @@ Roll your race:
 </tbody>
 </table>
 </div>
+<div>
 <h3 id="human">Human</h3>
 <div>
 
@@ -1294,6 +1310,8 @@ Roll your race:
 <li> The first time you die, ever, you instead don't. The referee will determine exactly how this happens. In combat, you fall unconscious but survive the battle at half hp. You even survive TPKs.</li>
 </ul>
 </div>
+</div>
+<div>
 <h3 id="dwarf">Dwarf</h3>
 <div>
 
@@ -1303,6 +1321,8 @@ Roll your race:
 <li> -2 to ranged attacks.</li>
 </ul>
 </div>
+</div>
+<div>
 <h3 id="elf">Elf</h3>
 <div>
 
@@ -1312,6 +1332,8 @@ Roll your race:
 <li> Hit dice are d4s instead of d6s.</li>
 </ul>
 </div>
+</div>
+<div>
 <h3 id="hobbit">Hobbit</h3>
 <div>
 
@@ -1321,6 +1343,8 @@ Roll your race:
 <li> Natural 1s are instead natural 20s for you.</li>
 </ul>
 </div>
+</div>
+<div>
 <h3 id="half-orc">Half-orc</h3>
 <div>
 
@@ -1328,6 +1352,7 @@ Roll your race:
 <li> +1 damage with melee weapons</li>
 <li> -1 attack in bright light</li>
 </ul>
+</div>
 </div>
 </div>
 </section>
@@ -1383,19 +1408,102 @@ magic item that is attack-like, or any action that describes
 itself as attack-type.
 </p>
 </div>
+<div class="def">
+<h4 id="move">Move</h4>
 <div>
 
-<ul>
-<li> Move: A character can move 30ish feet. Moving out of an enemy's reach provokes an opportunity attack. If it hits you, your move ends. (You can take this action multiple times in one round). Unlike other games, you can't split your movement.</li>
-<li> Melee Attack: A character makes an attack.</li>
-<li> Ranged Attack: Make a ranged attack. This provokes from anyone within your reach. If they hit you, your attack is spoiled.</li>
-<li> Cast a spell: A character casts a spell. Some spells require multiple actions. If a spell requires more than one action, you can cast it across turns, but if you take damage the spell is ruined. Casting a spell provokes an opportunity attack (certain spells specify they don't). If the attack hits, your spell is spoiled.</li>
-<li> Bull Rush: Make an opposed attack roll against an enemy (referee may grant circumstance bonuses based on size, etc.). If you win, you and the enemy move up to 15' in the direction of the enemy from you, with neither of you provoking opportunity attacks. This is not attack-like.</li>
-<li> Disengage: This round, you do not provoke opportunity attacks from moving, but you cannot move into the reach of enemies.</li>
-<li> Defend: Attack-like. You get +2 AC this round.</li>
-<li> Drink a potion: You retrieve a potion from your pack and drink it. This provokes an opportunity attack. If the attack hits, the potion falls to the ground and shatters.</li>
-<li> Other: Referee adjudicates.</li>
-</ul>
+<p>
+A character can move 30ish feet. Moving out of an enemy's
+reach provokes an opportunity attack. If it hits you, your move
+ends. (You can take this action multiple times in one round).
+Unlike other games, you can't split your movement.
+</p>
+</div>
+</div>
+<div class="def">
+<h4 id="melee-attack">Melee Attack</h4>
+<div>
+
+<p>
+A character makes an attack.
+</p>
+</div>
+</div>
+<div class="def">
+<h4 id="ranged-attack">Ranged Attack</h4>
+<div>
+
+<p>
+Make a ranged attack. This provokes from anyone
+within your reach. If they hit you, your attack is spoiled.
+</p>
+</div>
+</div>
+<div class="def">
+<h4 id="cast-a-spell">Cast a spell</h4>
+<div>
+
+<p>
+A character casts a spell. Some spells require
+multiple actions. If a spell requires more than one action, you
+can cast it across turns, but if you take damage the spell is
+ruined. Casting a spell provokes an opportunity attack (certain
+spells specify they don't). If the attack hits, your spell is
+spoiled.
+</p>
+</div>
+</div>
+<div class="def">
+<h4 id="bull-rush">Bull Rush</h4>
+<div>
+
+<p>
+Make an opposed attack roll against an enemy (referee
+may grant circumstance bonuses based on size, etc.). If you win,
+you and the enemy move up to 15' in the direction of the enemy
+from you, with neither of you provoking opportunity attacks.
+This is not attack-like.
+</p>
+</div>
+</div>
+<div class="def">
+<h4 id="disengage">Disengage</h4>
+<div>
+
+<p>
+This round, you do not provoke opportunity attacks
+from moving, but you cannot move into the reach of enemies.
+</p>
+</div>
+</div>
+<div class="def">
+<h4 id="defend">Defend</h4>
+<div>
+
+<p>
+Attack-like. You get +2 AC this round.
+</p>
+</div>
+</div>
+<div class="def">
+<h4 id="drink-a-potion">Drink a potion</h4>
+<div>
+
+<p>
+You retrieve a potion from your pack and drink
+it. This provokes an opportunity attack. If the attack hits, the
+potion falls to the ground and shatters.
+</p>
+</div>
+</div>
+<div class="def">
+<h4 id="other">Other</h4>
+<div>
+
+<p>
+Referee adjudicates.
+</p>
+</div>
 </div>
 </div>
 <div>
@@ -1413,12 +1521,15 @@ game less fun.
 <h2 id="character-creation">Character Creation</h2>
 <div>
 
+<div>
+
 <p>
 This is a lot of rolling, so you can automate it by clicking this button.
 You are left to decide your name, class, purchase equipment and choose your
 random first level ability (which only the referee knows the full list so
 he will give you your options once you have decided your class).
 </p>
+</div>
 </div>
    <button id="roll-button"> Roll a character! </button>
    <div id="rolled-character"></div>
